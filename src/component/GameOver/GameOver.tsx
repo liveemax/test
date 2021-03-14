@@ -1,20 +1,21 @@
 import React from "react";
-import {Button, Col, Row} from "react-bootstrap";
-import {Hand} from "../Hand";
+import {Link} from "react-router-dom";
+import hand from "../../assets/img/hand.svg";
+
 
 export const GameOver:React.FC<any> = ():any =>{
 return(
-    <Row>
-        <Col>
-    <Hand/>
-        </Col>
-        <Col>
+    <div>
+        <div>
+            <img src={hand} alt="hand" />
+        </div>
+        <div>
             <div>Total score:</div>
             <div>$8,000 earned</div>
             <div>
-                <Button>Try again</Button>
+                <Link to={"/"}><button>Try again</button></Link>
             </div>
-        </Col>
-    </Row>
+        </div>
+    </div>
 )
 }

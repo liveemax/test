@@ -1,0 +1,246 @@
+body{
+  margin: 0;
+}
+//************Color
+$Orange-120:rgba(232, 121, 40, 1);
+$Orange-100:rgba(255, 139, 55, 1);
+$Orange-80:rgba(255, 172, 112, 1);
+$Orange-5:rgba(255, 243, 235, 1);
+$Green-100:rgba(71, 216, 103, 1);
+$Green-5:rgba(230, 250, 234, 1);
+$Red-100:rgba(236, 98, 89, 1);
+$Red-5:rgba(253, 238, 237, 1);
+$Black-40:rgba(208, 208, 216, 1);
+$Black-5:rgba(245, 245, 247, 1);
+$White-100:rgba(245, 245, 247, 1);
+$Black-100:rgba(28, 28, 33, 1);
+$colorText:#C4C4C4;
+
+
+//**************Text
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+%Style{
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  line-height: 116%;
+}
+//Desktop
+
+%DHeadline{
+  @extend %Style;
+  font-size: 56px;
+  font-weight: 600;
+}
+%DButton{
+  @extend %Style;
+  font-size: 20px;
+  font-weight: 600;
+}
+%DOption{
+  @extend %Style;
+  font-weight: normal;
+  font-size: 20px;
+}
+%DQuestion{
+  @extend %Style;
+  font-weight: 600;
+  font-size: 32px;
+}
+
+//Mobile
+
+%MQuestion{
+  @extend %Style;
+  font-weight: 600;
+  font-size: 18px;
+}
+%MOption{
+  @extend %Style;
+  font-weight: normal;
+  font-size: 14px;
+}
+%MButton{
+  @extend %Style;
+  font-weight: 600;
+  font-size: 14px;
+}
+%MHeadline{
+  @extend %Style;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+//**************Button
+
+//Desktop
+%DBD{
+  @extend %DButton;
+  color: $White-100;
+  background: $Orange-100;
+  border-radius: 12px;
+  height: 64px;
+  width:300px;
+  border: none;
+  transition: background-color 0.1s linear;
+}
+%DBD:hover{
+  background: $Orange-80;
+}
+%DBD:focus{
+  background: $Orange-120;
+}
+
+//Mobile
+%MBD{
+  @extend %MButton;
+  color: $White-100;
+  background: $Orange-100;
+  border-radius: 8px;
+  height: 50px;
+  width:300px;
+  border: none;
+}
+%MBD:focus{
+  background: $Orange-120;
+}
+
+
+
+//**************Answer
+//Desktop
+
+%common{
+  content: "";
+  display: block;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top:9px;
+}
+
+
+%DAnswer{
+  @extend %DOption;
+  position: relative;
+  background: $White-100;
+  border: none;
+  border-bottom: 1px solid #D0D0D8;
+  border-top: 1px solid #D0D0D8;
+}
+%DAnswer:focus{
+  outline: none;
+}
+%DAnswer:before{
+  @extend %common;
+  background: $White-100;
+  border-bottom: 1px solid #D0D0D8;
+  border-left: 1px solid #D0D0D8;
+  left:-25px ;
+  transform: rotate(45deg);
+}
+%DAnswer:after{
+  @extend %common;
+  background: $White-100;
+  border-bottom: 1px solid #D0D0D8;
+  border-left: 1px solid #D0D0D8;
+  right:-25px ;
+  transform: rotate(-135deg);
+}
+%DAnswer:hover{
+  border-bottom: 1px solid $Orange-100;
+  border-top: 1px solid $Orange-100;
+}
+%DAnswer:hover:before{
+  border-bottom: 1px solid $Orange-100;
+  border-left: 1px solid $Orange-100;
+}
+%DAnswer:hover:after{
+  border-bottom: 1px solid $Orange-100;
+  border-left: 1px solid $Orange-100;
+}
+
+
+%DAnswerSet{
+  @extend %DOption;
+  position: relative;
+  pointer-events: none;
+  border: none;
+  background-color:  $Orange-5;
+  border-bottom: 1px solid $Orange-100;
+  border-top: 1px solid $Orange-100;
+}
+%DAnswerSet:before{
+  @extend %common;
+  background-color:  $Orange-5;
+  border-bottom: 1px solid $Orange-100;
+  border-left: 1px solid $Orange-100;
+  left:-25px ;
+  transform: rotate(45deg);
+}
+%DAnswerSet:after{
+  @extend %common;
+  background-color: $Orange-5;
+  border-bottom: 1px solid $Orange-100;
+  border-left: 1px solid $Orange-100;
+  right:-25px ;
+  transform: rotate(-135deg);
+}
+
+
+
+
+%DAnswerCorrect{
+  @extend %DOption;
+  position: relative;
+  pointer-events: none;
+  border: none;
+  background-color: $Green-5;
+  border-bottom: 1px solid $Green-100;
+  border-top: 1px solid $Green-100;
+}
+%DAnswerCorrect:before{
+  @extend %common;
+  background-color: $Green-5;
+  border-bottom: 1px solid $Green-100;
+  border-left: 1px solid $Green-100;
+  left:-25px ;
+  transform: rotate(45deg);
+}
+%DAnswerCorrect:after{
+  @extend %common;
+  background-color: $Green-5;
+  border-bottom: 1px solid $Green-100;
+  border-left: 1px solid $Green-100;
+  right:-25px ;
+  transform: rotate(-135deg);
+}
+
+
+
+%DAnswerWrong{
+  @extend %DOption;
+  position: relative;
+  pointer-events: none;
+  border: none;
+  background-color: $Red-5;
+  border-bottom: 1px solid $Red-100;
+  border-top: 1px solid $Red-100;
+}
+%DAnswerWrong:before{
+  @extend %common;
+  background-color: $Red-5;
+  border-bottom: 1px solid $Red-100;
+  border-left: 1px solid $Red-100;
+  left:-25px ;
+  transform: rotate(45deg);
+}
+%DAnswerWrong:after{
+  @extend %common;
+  background-color: $Red-5;
+  border-bottom: 1px solid $Red-100;
+  border-left: 1px solid $Red-100;
+  right:-25px ;
+  transform: rotate(-135deg);
+}

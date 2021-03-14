@@ -1,0 +1,39 @@
+@import "values";
+.root{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width:100vw;
+  height: 100vh;
+}
+.hand{
+  margin: auto;
+  padding-bottom:60px;
+}
+.ask{
+  margin: auto;
+  p{
+    @extend %DHeadline;
+    color: $Black-100;
+    margin: 0 30px 64px 0;
+    width: 640px;
+  }
+  padding-bottom: 60px;
+
+}
+.start{
+  @extend %DBD;
+}
+.triangle{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
+}
+.lang{
+  top: 20px;
+  right: 40px;
+  position: absolute;
+}
