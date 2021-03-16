@@ -1,3 +1,4 @@
+
 body{
   margin: 0;
 }
@@ -40,7 +41,6 @@ $colorText:#C4C4C4;
 }
 %DOption{
   @extend %Style;
-  font-weight: normal;
   font-size: 20px;
 }
 %DQuestion{
@@ -84,6 +84,7 @@ $colorText:#C4C4C4;
   width:300px;
   border: none;
   transition: background-color 0.1s linear;
+  outline: none;
 }
 %DBD:hover{
   background: $Orange-80;
@@ -108,139 +109,4 @@ $colorText:#C4C4C4;
 
 
 
-//**************Answer
-//Desktop
 
-%common{
-  content: "";
-  display: block;
-  height: 50px;
-  width: 50px;
-  position: absolute;
-  top:9px;
-}
-
-
-%DAnswer{
-  @extend %DOption;
-  position: relative;
-  background: $White-100;
-  border: none;
-  border-bottom: 1px solid #D0D0D8;
-  border-top: 1px solid #D0D0D8;
-}
-%DAnswer:focus{
-  outline: none;
-}
-%DAnswer:before{
-  @extend %common;
-  background: $White-100;
-  border-bottom: 1px solid #D0D0D8;
-  border-left: 1px solid #D0D0D8;
-  left:-25px ;
-  transform: rotate(45deg);
-}
-%DAnswer:after{
-  @extend %common;
-  background: $White-100;
-  border-bottom: 1px solid #D0D0D8;
-  border-left: 1px solid #D0D0D8;
-  right:-25px ;
-  transform: rotate(-135deg);
-}
-%DAnswer:hover{
-  border-bottom: 1px solid $Orange-100;
-  border-top: 1px solid $Orange-100;
-}
-%DAnswer:hover:before{
-  border-bottom: 1px solid $Orange-100;
-  border-left: 1px solid $Orange-100;
-}
-%DAnswer:hover:after{
-  border-bottom: 1px solid $Orange-100;
-  border-left: 1px solid $Orange-100;
-}
-
-
-%DAnswerSet{
-  @extend %DOption;
-  position: relative;
-  pointer-events: none;
-  border: none;
-  background-color:  $Orange-5;
-  border-bottom: 1px solid $Orange-100;
-  border-top: 1px solid $Orange-100;
-}
-%DAnswerSet:before{
-  @extend %common;
-  background-color:  $Orange-5;
-  border-bottom: 1px solid $Orange-100;
-  border-left: 1px solid $Orange-100;
-  left:-25px ;
-  transform: rotate(45deg);
-}
-%DAnswerSet:after{
-  @extend %common;
-  background-color: $Orange-5;
-  border-bottom: 1px solid $Orange-100;
-  border-left: 1px solid $Orange-100;
-  right:-25px ;
-  transform: rotate(-135deg);
-}
-
-
-
-
-%DAnswerCorrect{
-  @extend %DOption;
-  position: relative;
-  pointer-events: none;
-  border: none;
-  background-color: $Green-5;
-  border-bottom: 1px solid $Green-100;
-  border-top: 1px solid $Green-100;
-}
-%DAnswerCorrect:before{
-  @extend %common;
-  background-color: $Green-5;
-  border-bottom: 1px solid $Green-100;
-  border-left: 1px solid $Green-100;
-  left:-25px ;
-  transform: rotate(45deg);
-}
-%DAnswerCorrect:after{
-  @extend %common;
-  background-color: $Green-5;
-  border-bottom: 1px solid $Green-100;
-  border-left: 1px solid $Green-100;
-  right:-25px ;
-  transform: rotate(-135deg);
-}
-
-
-
-%DAnswerWrong{
-  @extend %DOption;
-  position: relative;
-  pointer-events: none;
-  border: none;
-  background-color: $Red-5;
-  border-bottom: 1px solid $Red-100;
-  border-top: 1px solid $Red-100;
-}
-%DAnswerWrong:before{
-  @extend %common;
-  background-color: $Red-5;
-  border-bottom: 1px solid $Red-100;
-  border-left: 1px solid $Red-100;
-  left:-25px ;
-  transform: rotate(45deg);
-}
-%DAnswerWrong:after{
-  @extend %common;
-  background-color: $Red-5;
-  border-bottom: 1px solid $Red-100;
-  border-left: 1px solid $Red-100;
-  right:-25px ;
-  transform: rotate(-135deg);
-}

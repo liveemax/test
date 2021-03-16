@@ -10,16 +10,6 @@
   p{
     @extend %DQuestion;
     height: 74px;
-    margin: 140px 0 0 80px;
-    max-width: 640px;
-  }
-  background-color: #E5E5E5;
-}
-.game{
-  width: 73%;
-  p{
-    @extend %DQuestion;
-    height: 74px;
     margin-top: 140px;
     margin-left:80px;
     max-width: 640px;
@@ -35,6 +25,14 @@
   width: 100%;
 }
 .wrapper{
-  width: 100%;
+  width: 810px;
   display: flex;
+  flex-wrap: wrap;
+}
+
+.cash_wrapper{
+  width: 27%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

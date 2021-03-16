@@ -1,0 +1,32 @@
+@import "values";
+.root{
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  background-color: $Black-5;
+}
+.item{
+  width: 50%;
+  color: $Black-100;
+
+}
+.item:first-child{
+  display: flex;
+  justify-content: center;
+}
+.total{
+  @extend %DQuestion;
+  opacity: 0.5;
+}
+.earned{
+  @extend %DHeadline;
+  margin-bottom: 64px;
+}
+.end{
+  @extend %DBD
+}
+.lang{
+  top: 20px;
+  right: 40px;
+  position: absolute;
+}
