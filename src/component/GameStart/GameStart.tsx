@@ -8,7 +8,7 @@ import classes from "../../assets/css/gameStart.module.scss"
 export const GameStart:React.FC<any> = ():any =>{
 return(
     <div className={classes.root}>
-        <div  className={classes.hand}>
+        <div className={classes.hand}>
             <img src={hand} alt="hand" />
         </div>
         <div  className={classes.ask}>

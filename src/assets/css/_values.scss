@@ -68,23 +68,27 @@ $colorText:#C4C4C4;
 }
 %MHeadline{
   @extend %Style;
-  font-size: 20px;
+  font-size: 32px;
   font-weight: 600;
 }
 
 //**************Button
 
 //Desktop
+%common_butt{
+  border: none;
+  transition: background-color 0.1s linear;
+  outline: none;
+  cursor: pointer;
+}
 %DBD{
   @extend %DButton;
+  @extend %common_butt;
   color: $White-100;
   background: $Orange-100;
   border-radius: 12px;
   height: 64px;
   width:300px;
-  border: none;
-  transition: background-color 0.1s linear;
-  outline: none;
 }
 %DBD:hover{
   background: $Orange-80;
@@ -96,17 +100,27 @@ $colorText:#C4C4C4;
 //Mobile
 %MBD{
   @extend %MButton;
+  @extend %common_butt;
   color: $White-100;
   background: $Orange-100;
   border-radius: 8px;
   height: 50px;
   width:300px;
-  border: none;
 }
 %MBD:focus{
   background: $Orange-120;
 }
-
+%LANG {
+  @extend %common_butt;
+  color: $White-100;
+  background: $Orange-100;
+  border-radius: 8px;
+  height: 50px;
+  width: 100px;
+  right: 30px;
+  top: 20px;
+  position: absolute;
+}
 
 
 

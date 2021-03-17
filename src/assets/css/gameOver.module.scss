@@ -8,7 +8,6 @@
 .item{
   width: 50%;
   color: $Black-100;
-
 }
 .item:first-child{
   display: flex;
@@ -26,7 +25,53 @@
   @extend %DBD
 }
 .lang{
-  top: 20px;
-  right: 40px;
-  position: absolute;
+  @extend %LANG
 }
+
+@media screen and (max-width: 960px){
+  .earned{
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+  .total {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 720px){
+  .root{
+    flex-direction: column;
+  }
+  .item{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+  }
+  .end{
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translate(-50%,0);
+  }
+  .total{
+    margin-bottom: 20px;
+  }
+  .item:first-child{
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    img{
+      max-height: 200px;
+    }
+  }
+  .lang{
+    width: 50px;
+    height: 30px;
+  }
+}
+
