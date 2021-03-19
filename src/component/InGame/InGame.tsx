@@ -1,54 +1,36 @@
-import React, {useRef} from "react";
+import React, {useContext, useRef, useState} from "react";
 import {Answer} from "./Answer";
 import classes from "../../assets/css/InGame.module.scss"
 import {Cash} from "./Cash";
 import {Link} from "react-router-dom";
+import {handleClickBurger} from "./handleClickBurger";
+import {StoreContext} from "../../index";
 
 export const InGame: React.FC = (): any => {
-    let game=useRef<HTMLInputElement>(null)
-    let cash=useRef<HTMLInputElement>(null)
-    let handleClick=(e:any)=>{
-        if(game && game.current&&cash&&cash.current) {
-            let current = e.currentTarget.classList[0]
-            let currentClass = current.split("_")[1]
-            e.currentTarget.classList.remove(current)
-            if (currentClass === "close") {
-                cash.current.className = ""
-                e.currentTarget.classList.add(classes.burger)
-                game.current.classList.add(classes.visible)
-                cash.current.classList.add(classes.hidden)
-                game.current.classList.add(classes.game)
-            }
-            if (currentClass === "burger") {
-                game.current.className = ""
-                e.currentTarget.classList.add(classes.close)
-                game.current.classList.add(classes.hidden)
-                cash.current.classList.add(classes.visible)
-                cash.current.classList.add(classes.cash_wrapper)
-            }
-        }
-    }
-
+    let money=["$500","$1,000","$2,000","$4,000","$8,000","$16,000","$32,000","$64,000","$125,000","$250,000","$500,000","$1,000,000"];
+    let [state,setState]=useState([])
+    let game=useRef<HTMLInputElement>(null);let cash=useRef<HTMLInputElement>(null)
+    let A=65;let store=useContext(StoreContext)
     return (
         <div className={classes.root}>
             <div ref={game} className={classes.game+" "+classes.visible}>
-                <p>How old your elder brother was 10 years before you was born, mate?</p>
+                <p>{store.question}</p>
                 <div className={classes.answer}>
                     <div className={classes.wrapper}>
-                        <Link to={"/gameover"}><Answer /></Link>
-                        <Link to={"/gameover"}><Answer /></Link>
-                        <Link to={"/gameover"}><Answer /></Link>
-                        <Link to={"/gameover"}><Answer /></Link>
+                        {
+                            store.answer.map((el,ind,array) => {
+                            return <Answer answer={store.answer[ind]} letter={String.fromCharCode(A+ind)} key={el}/>
+                        })
+                        }
                     </div>
                 </div>
             </div>
             <div ref={cash} className={classes.cash_wrapper +" "+classes.hidden}>
-                <Cash/>
-                <Cash/>
-                <Cash/>
-                <Cash/>
+                {money.map((el,index,ar)=>{
+                        return <Cash  money={money[index]} key={el+index*Math.random()}/>
+            }).reverse()}
             </div>
-            <button onClick={(e)=>{handleClick(e)}} className={classes.burger}></button>
+            <button onClick={(e)=>{handleClickBurger(e,game,cash)}} className={classes.burger}></button>
         </div>
     )
 }
