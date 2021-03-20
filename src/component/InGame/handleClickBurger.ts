@@ -7,9 +7,9 @@ export const handleClickBurger=(e:any, game:RefObject<HTMLInputElement>, cash:Re
         e.currentTarget.classList.remove(current)
         if (currentClass === "close") {
             cash.current.className = ""
+            cash.current.classList.add(classes.hidden)
             e.currentTarget.classList.add(classes.burger)
             game.current.classList.add(classes.visible)
-            cash.current.classList.add(classes.hidden)
             game.current.classList.add(classes.game)
         }
         if (currentClass === "burger") {

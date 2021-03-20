@@ -58,10 +58,14 @@
 }
 
 @media screen and (max-width: 1260px) {
-  .inactive{
-    background-image: url("./../img/button/Mobile/inactive.svg");
+  %common_img{
     width: 322px;
     height: 56px;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .inactive{
+    background-image: url("./../img/button/Mobile/inactive.svg");
   }
   .inactive:hover {
     background-image: url("./../img/button/Mobile/inactive.svg");
@@ -70,20 +74,16 @@
     background-image: url("./../img/button/Mobile/correct.svg");
     pointer-events: none;
 
-    width: 322px;
-    height: 56px;
   }
   .selected {
     background-image: url("./../img/button/Mobile/selected.svg");
     pointer-events: none;
-    width: 322px;
-    height: 56px;
+
   }
   .wrong {
     background-image: url("./../img/button/Mobile/wrong.svg");
     pointer-events: none;
-    width: 322px;
-    height: 56px;
+
   }
 }
 @media screen and (max-width: 960px) {

@@ -1,4 +1,4 @@
-import React, {useContext,  useRef} from "react";
+import React, {useContext, useEffect, useLayoutEffect, useRef, useState} from "react";
 import {Answer} from "./Answer";
 import classes from "../../assets/css/InGame.module.scss"
 import {Cash} from "./Cash";
@@ -6,12 +6,14 @@ import {handleClickBurger} from "./handleClickBurger";
 import {StoreContext} from "../../index";
 import {observer} from "mobx-react-lite";
 import {Redirect} from "react-router";
+import {updateSize} from "./updateSize";
 
 export const InGame=observer( (): any => {
     let game=useRef<HTMLInputElement>(null);
     let cash=useRef<HTMLInputElement>(null)
     let store=useContext(StoreContext)
     let A=65;
+    window.addEventListener('resize', ()=>updateSize(game,cash,store));   //обновляем стили (бургера) при resize
     return (
         <div className={classes.root}>
             <div ref={game} className={classes.game+" "+classes.visible}>

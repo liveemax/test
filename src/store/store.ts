@@ -10,9 +10,10 @@ export class store {
     answer: Array<any> = []
     correct: string = ""
     cash: number = 0
-    difficulty: Array<string> = ["easy","easy","medium","medium","medium","medium","medium","hard","hard","hard","hard","hard"]
+    difficulty: Array<string> = ["easy","easy","easy","easy","medium","medium","medium","medium","hard","hard","hard","hard"]
     token: string = ""
     gameOver:boolean=false
+    width:number=0
 
 
     constructor() {
@@ -25,11 +26,18 @@ export class store {
             difficulty: observable,
             token: observable,
             gameOver:observable,
+            width:observable,
+            setWidth:action,
             setNewData:action,
             toGameOver:action,
         })
     }
 
+
+
+    setWidth(width:number){
+        this.width=width
+    }
 
 
 
@@ -63,6 +71,8 @@ export class store {
 
 
     async getToken () {
+        if(this.width===0)
+            this.width=window.innerWidth
         try {
              const token= await apiToken()
              if(token.response_code===0) {

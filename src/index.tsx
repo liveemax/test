@@ -1,12 +1,12 @@
 import ReactDOM from "react-dom";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
-import React, {createContext, useContext} from "react";
+import React, {createContext} from "react";
 import {GameStart} from "./component/GameStart/GameStart";
 import {InGame} from "./component/InGame/InGame";
 import {GameOver} from "./component/GameOver/GameOver";
 import {store} from "./store/store";
 
-export const StoreContext = createContext<store>(""as any)
+export const StoreContext = createContext<store>(new store())
 function App() {
 	return (
 		<BrowserRouter>

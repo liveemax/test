@@ -9,7 +9,7 @@ import { StoreContext } from "../..";
 export const GameStart:React.FC<any> =observer( ():any =>{
     const props=useContext(StoreContext)
     if(props.token==="")
-    props.getToken()
+    props.getToken()   //first input
 return(
     <div className={classes.root}>
         <div className={classes.hand}>
