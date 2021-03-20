@@ -1,16 +1,17 @@
-import React, {useContext, useRef, useState} from "react";
+import React, {useContext,  useRef} from "react";
 import {Answer} from "./Answer";
 import classes from "../../assets/css/InGame.module.scss"
 import {Cash} from "./Cash";
-import {Link} from "react-router-dom";
 import {handleClickBurger} from "./handleClickBurger";
 import {StoreContext} from "../../index";
+import {observer} from "mobx-react-lite";
+import {Redirect} from "react-router";
 
-export const InGame: React.FC = (): any => {
-    let money=["$500","$1,000","$2,000","$4,000","$8,000","$16,000","$32,000","$64,000","$125,000","$250,000","$500,000","$1,000,000"];
-    let [state,setState]=useState([])
-    let game=useRef<HTMLInputElement>(null);let cash=useRef<HTMLInputElement>(null)
-    let A=65;let store=useContext(StoreContext)
+export const InGame=observer( (): any => {
+    let game=useRef<HTMLInputElement>(null);
+    let cash=useRef<HTMLInputElement>(null)
+    let store=useContext(StoreContext)
+    let A=65;
     return (
         <div className={classes.root}>
             <div ref={game} className={classes.game+" "+classes.visible}>
@@ -26,11 +27,20 @@ export const InGame: React.FC = (): any => {
                 </div>
             </div>
             <div ref={cash} className={classes.cash_wrapper +" "+classes.hidden}>
-                {money.map((el,index,ar)=>{
-                        return <Cash  money={money[index]} key={el+index*Math.random()}/>
+                {store.money.map((el,index,ar)=>{
+                    if(index<store.cash)
+                    {
+                        return <Cash position={"past"} money={store.money[index]} key={el+index*Math.random()}/>
+                    }
+                else if(index>store.cash)
+                    {return <Cash position={"future"} money={store.money[index]} key={el+index*Math.random()}/>}
+                else
+                    {return <Cash position={"active"} money={store.money[index]} key={el+index*Math.random()}/>}
             }).reverse()}
             </div>
             <button onClick={(e)=>{handleClickBurger(e,game,cash)}} className={classes.burger}></button>
+            {store.gameOver?<Redirect to={"/gameOver"} />:""}
         </div>
     )
 }
+)

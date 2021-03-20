@@ -1,12 +1,12 @@
 import ReactDOM from "react-dom";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
-import React, {createContext} from "react";
+import React, {createContext, useContext} from "react";
 import {GameStart} from "./component/GameStart/GameStart";
 import {InGame} from "./component/InGame/InGame";
 import {GameOver} from "./component/GameOver/GameOver";
 import {store} from "./store/store";
 
-export const StoreContext = createContext<store>(new store())
+export const StoreContext = createContext<store>(""as any)
 function App() {
 	return (
 		<BrowserRouter>
@@ -22,7 +22,7 @@ function App() {
 					<GameOver/>
 				</Route>
 			</Switch>
-			</StoreContext.Provider>,
+			</StoreContext.Provider>
 		</BrowserRouter>
 	);
 }
