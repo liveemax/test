@@ -1,4 +1,4 @@
-import {runInAction, makeObservable, observable, configure, action, comparer, computed} from "mobx"
+import {runInAction, makeObservable, observable, configure, action} from "mobx"
 import {apiToken} from "../api/apiToken";
 import {apiQuestions} from "../api/apiQuestions";
 import {randomPosition} from "./function/randomPosition";
@@ -63,6 +63,7 @@ export class store {
         let ans=randomPosition(data.results[0].incorrect_answers) //array have 4 questions
             this.setNewData(data,ans,cash)
         } catch (e) {
+            debugger
             alert(e)
         }
     }
@@ -84,6 +85,7 @@ export class store {
              {throw "whf...getToken Error"}
             this.getData(0)
         } catch (e) {
+            debugger
             alert(e)
         }
     }
