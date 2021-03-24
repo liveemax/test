@@ -1,5 +1,7 @@
-@import "values";
-.root{
+/** @format */
+
+@import 'values';
+.root {
   width: 100%;
 }
 .inactive {
@@ -7,11 +9,11 @@
   width: 100%;
   height: 40px;
   margin-bottom: 8px;
-  img{
+  img {
     width: 100%;
     height: 40px;
   }
-  span{
+  span {
     @extend %DOption;
     position: absolute;
     top: 50%;
@@ -19,6 +21,6 @@
     transform: translate(-50%, -50%);
   }
 }
-.prev{
- color:$Black-40
+.prev {
+  color: $Black-40;
 }

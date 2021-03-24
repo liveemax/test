@@ -1,30 +1,32 @@
-@import "values";
+/** @format */
+
+@import 'values';
 .root {
   position: relative;
   width: 100vw;
   height: 100vh;
   display: flex;
 }
-.game{
+.game {
   width: 73%;
-  p{
+  p {
     @extend %DQuestion;
     height: 74px;
     margin-top: 140px;
-    margin-left:80px;
+    margin-left: 80px;
     max-width: 640px;
   }
-  background-color: #E5E5E5;
+  background-color: #e5e5e5;
 }
-.answer{
-  margin-left:80px;
+.answer {
+  margin-left: 80px;
   bottom: 0;
   margin-top: 35vh;
   display: flex;
   flex-direction: column;
   width: 100%;
 }
-.wrapper{
+.wrapper {
   position: absolute;
   bottom: 0px;
   width: 810px;
@@ -32,19 +34,18 @@
   flex-wrap: wrap;
 }
 
-.cash_wrapper{
+.cash_wrapper {
   width: 27%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.burger{
+.burger {
   display: none;
 }
-.close{
+.close {
   display: none;
 }
-
 
 @media screen and (max-width: 1260px) {
   .game {
@@ -52,57 +53,57 @@
       margin-left: 20px;
     }
   }
-  .answer{
-    margin-left:20px;
+  .answer {
+    margin-left: 20px;
   }
 }
-@media screen and (max-width: 960px){
-  .game{
+@media screen and (max-width: 960px) {
+  .game {
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
-    p{
+    p {
       margin-top: 0;
     }
   }
-  .answer{
+  .answer {
     margin-left: 0;
     margin-top: 0;
   }
-  .wrapper{
+  .wrapper {
     width: 300px;
     justify-content: center;
     position: absolute;
     bottom: 20px;
     left: 40%;
-    transform: translate(-50%,0);
+    transform: translate(-50%, 0);
   }
 }
-@media screen and (max-width: 720px){
-  .cash_wrapper{
-    background-color: #E5E5E5;
+@media screen and (max-width: 720px) {
+  .cash_wrapper {
+    background-color: #e5e5e5;
   }
-  .hidden{
+  .hidden {
     display: none;
     width: 0;
   }
-  .visible{
+  .visible {
     display: flex;
     width: 100%;
   }
-  .game{
+  .game {
     width: 100%;
   }
-  .wrapper{
+  .wrapper {
     left: 50%;
   }
-  .burger{
+  .burger {
     display: block;
-    background-image: url("./../img/burger/burger.png");
-    background-color: #E5E5E5;
+    background-image: url('./../img/burger/burger.png');
+    background-color: #e5e5e5;
     background-repeat: no-repeat;
     border: none;
-    cursor:pointer;
+    cursor: pointer;
     position: absolute;
     right: 20px;
     top: 20px;
@@ -110,16 +111,16 @@
     width: 16px;
     transition: background 0.2s linear;
   }
-  .burger:focus{
+  .burger:focus {
     outline: none;
   }
-  .close{
+  .close {
     display: block;
-    background-image: url("./../img/burger/close.png");
-    background-color: #E5E5E5;
+    background-image: url('./../img/burger/close.png');
+    background-color: #e5e5e5;
     background-repeat: no-repeat;
     border: none;
-    cursor:pointer;
+    cursor: pointer;
     position: absolute;
     right: 20px;
     top: 20px;
@@ -127,7 +128,7 @@
     width: 16px;
     transition: background 0.2s linear;
   }
-  .close:focus{
+  .close:focus {
     outline: none;
   }
 }

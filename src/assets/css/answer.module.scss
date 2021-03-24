@@ -1,8 +1,11 @@
-@import "values";
-.freeze{
+/** @format */
+
+@import 'values';
+.freeze {
   pointer-events: none;
 }
-%common_img{
+%common_img {
+  outline: none;
   margin-bottom: 20px;
   cursor: pointer;
   position: relative;
@@ -15,7 +18,10 @@
 }
 .inactive {
   @extend %common_img;
-  background-image: url("./../img/button/Inactive.svg");
+  background-image: url('./../img/button/Inactive.svg');
+}
+.inactive:focus {
+  outline: #c4c4c4 solid 3px;
 }
 .text {
   position: absolute;
@@ -34,22 +40,22 @@
   }
 }
 .inactive:hover {
-  background-image: url("./../img/button/Hover.svg");
+  background-image: url('./../img/button/Hover.svg');
   background-repeat: no-repeat;
 }
 .correct {
   @extend %common_img;
-  background-image: url("./../img/button/Correct.svg");
+  background-image: url('./../img/button/Correct.svg');
   pointer-events: none;
 }
 .selected {
   @extend %common_img;
-  background-image: url("./../img/button/Selected.svg");
+  background-image: url('./../img/button/Selected.svg');
   pointer-events: none;
 }
 .wrong {
   @extend %common_img;
-  background-image: url("./../img/button/Wrong.svg");
+  background-image: url('./../img/button/Wrong.svg');
   pointer-events: none;
 }
 .disabled {
@@ -58,59 +64,55 @@
 }
 
 @media screen and (max-width: 1260px) {
-  %common_img{
+  %common_img {
     width: 322px;
     height: 56px;
     font-weight: 600;
     font-size: 14px;
   }
-  .inactive{
-    background-image: url("./../img/button/Mobile/inactive.svg");
+  .inactive {
+    background-image: url('./../img/button/Mobile/inactive.svg');
   }
   .inactive:hover {
-    background-image: url("./../img/button/Mobile/inactive.svg");
+    background-image: url('./../img/button/Mobile/inactive.svg');
   }
   .correct {
-    background-image: url("./../img/button/Mobile/correct.svg");
+    background-image: url('./../img/button/Mobile/correct.svg');
     pointer-events: none;
-
   }
   .selected {
-    background-image: url("./../img/button/Mobile/selected.svg");
+    background-image: url('./../img/button/Mobile/selected.svg');
     pointer-events: none;
-
   }
   .wrong {
-    background-image: url("./../img/button/Mobile/wrong.svg");
+    background-image: url('./../img/button/Mobile/wrong.svg');
     pointer-events: none;
-
   }
 }
 @media screen and (max-width: 960px) {
-  .inactive{
-    background-image: url("./../img/button/Mobile/inactive.svg");
+  %common_img {
+    outline: none;
+  }
+  .inactive {
+    background-image: url('./../img/button/Mobile/inactive.svg');
     margin-bottom: 3px;
   }
   .inactive:hover {
-    background-image: url("./../img/button/Mobile/inactive.svg");
-
+    background-image: url('./../img/button/Mobile/inactive.svg');
   }
   .correct {
-    background-image: url("./../img/button/Mobile/correct.svg");
+    background-image: url('./../img/button/Mobile/correct.svg');
     pointer-events: none;
     margin-bottom: 3px;
-
   }
   .selected {
-    background-image: url("./../img/button/Mobile/selected.svg");
+    background-image: url('./../img/button/Mobile/selected.svg');
     pointer-events: none;
     margin-bottom: 3px;
-
   }
   .wrong {
-    background-image: url("./../img/button/Mobile/wrong.svg");
+    background-image: url('./../img/button/Mobile/wrong.svg');
     pointer-events: none;
     margin-bottom: 3px;
-
   }
 }
