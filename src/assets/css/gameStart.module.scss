@@ -1,31 +1,32 @@
-@import "values";
-.root{
+/** @format */
+
+@import 'values';
+.root {
   display: flex;
   justify-content: center;
-  align-items:center;
-  width:100vw;
+  align-items: center;
+  width: 100vw;
   height: 100vh;
 }
-.hand{
-  width:50%;
-  img{
-  width: 100%;
-}
-}
-.ask{
+.hand {
   width: 50%;
-  p{
+  img {
+    width: 100%;
+  }
+}
+.ask {
+  width: 50%;
+  p {
     @extend %DHeadline;
     color: $Black-100;
     margin: 0 0 64px 0;
     max-width: 640px;
   }
-
 }
-.start{
+.start {
   @extend %DBD;
 }
-.triangle{
+.triangle {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -33,30 +34,30 @@
   width: 100vw;
   z-index: -1;
 }
-.lang{
+.lang {
   @extend %LANG;
 }
-@media screen and (max-width: 960px){
-  .ask{
+@media screen and (max-width: 960px) {
+  .ask {
     p {
       font-size: 32px;
       margin-bottom: 30px;
     }
     margin-left: 60px;
   }
-  .start{
+  .start {
     font-weight: 600;
     font-size: 14px;
     border-radius: 8px;
     height: 50px;
-    width:300px;
+    width: 300px;
   }
 }
-@media screen and (max-width: 720px){
-  .root{
+@media screen and (max-width: 720px) {
+  .root {
     flex-direction: column;
   }
-  .ask{
+  .ask {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -66,17 +67,17 @@
     height: 40%;
     text-align: center;
   }
-  .hand{
+  .hand {
     height: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    img{
+    img {
       max-height: 200px;
     }
   }
-  .lang{
+  .lang {
     width: 50px;
     height: 30px;
   }

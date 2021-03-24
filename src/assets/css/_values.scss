@@ -1,49 +1,49 @@
+/** @format */
 
-body{
+body {
   margin: 0;
 }
 //************Color
-$Orange-120:rgba(232, 121, 40, 1);
-$Orange-100:rgba(255, 139, 55, 1);
-$Orange-80:rgba(255, 172, 112, 1);
-$Orange-5:rgba(255, 243, 235, 1);
-$Green-100:rgba(71, 216, 103, 1);
-$Green-5:rgba(230, 250, 234, 1);
-$Red-100:rgba(236, 98, 89, 1);
-$Red-5:rgba(253, 238, 237, 1);
-$Black-40:rgba(208, 208, 216, 1);
-$Black-5:rgba(245, 245, 247, 1);
-$White-100:rgba(245, 245, 247, 1);
-$Black-100:rgba(28, 28, 33, 1);
-$colorText:#C4C4C4;
-
+$Orange-120: rgba(232, 121, 40, 1);
+$Orange-100: rgba(255, 139, 55, 1);
+$Orange-80: rgba(255, 172, 112, 1);
+$Orange-5: rgba(255, 243, 235, 1);
+$Green-100: rgba(71, 216, 103, 1);
+$Green-5: rgba(230, 250, 234, 1);
+$Red-100: rgba(236, 98, 89, 1);
+$Red-5: rgba(253, 238, 237, 1);
+$Black-40: rgba(208, 208, 216, 1);
+$Black-5: rgba(245, 245, 247, 1);
+$White-100: rgba(245, 245, 247, 1);
+$Black-100: rgba(28, 28, 33, 1);
+$colorText: #c4c4c4;
 
 //**************Text
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
-%Style{
+%Style {
   font-family: 'Inter', sans-serif;
   font-style: normal;
   line-height: 116%;
 }
 //Desktop
 
-%DHeadline{
+%DHeadline {
   @extend %Style;
   font-size: 56px;
   font-weight: 600;
 }
-%DButton{
+%DButton {
   @extend %Style;
   font-size: 20px;
   font-weight: 600;
 }
-%DOption{
+%DOption {
   @extend %Style;
   font-size: 20px;
 }
-%DQuestion{
+%DQuestion {
   @extend %Style;
   font-weight: 600;
   font-size: 32px;
@@ -51,22 +51,22 @@ $colorText:#C4C4C4;
 
 //Mobile
 
-%MQuestion{
+%MQuestion {
   @extend %Style;
   font-weight: 600;
   font-size: 18px;
 }
-%MOption{
+%MOption {
   @extend %Style;
   font-weight: normal;
   font-size: 14px;
 }
-%MButton{
+%MButton {
   @extend %Style;
   font-weight: 600;
   font-size: 14px;
 }
-%MHeadline{
+%MHeadline {
   @extend %Style;
   font-size: 32px;
   font-weight: 600;
@@ -75,39 +75,39 @@ $colorText:#C4C4C4;
 //**************Button
 
 //Desktop
-%common_butt{
+%common_butt {
   border: none;
   transition: background-color 0.1s linear;
   outline: none;
   cursor: pointer;
 }
-%DBD{
+%DBD {
   @extend %DButton;
   @extend %common_butt;
   color: $White-100;
   background: $Orange-100;
   border-radius: 12px;
   height: 64px;
-  width:300px;
+  width: 300px;
 }
-%DBD:hover{
+%DBD:hover {
   background: $Orange-80;
 }
-%DBD:focus{
+%DBD:focus {
   background: $Orange-120;
 }
 
 //Mobile
-%MBD{
+%MBD {
   @extend %MButton;
   @extend %common_butt;
   color: $White-100;
   background: $Orange-100;
   border-radius: 8px;
   height: 50px;
-  width:300px;
+  width: 300px;
 }
-%MBD:focus{
+%MBD:focus {
   background: $Orange-120;
 }
 %LANG {
@@ -121,6 +121,3 @@ $colorText:#C4C4C4;
   top: 20px;
   position: absolute;
 }
-
-
-
